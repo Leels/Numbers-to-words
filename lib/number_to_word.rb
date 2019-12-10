@@ -8,7 +8,7 @@ class Numeronym
   end
 
   def convert
-    number_string = @numeronym.to_s()
+    number_string = @numeronym.to_s().chars
   end
 
 end
