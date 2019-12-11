@@ -18,7 +18,11 @@ class Numeronym
     deca = {"2" => "twenty", "3" => "thirty", "4" => "forty", "5" => "fifty", "6" => "sixty", "7" => "seventy", "8" => "eighty", "9" => "ninety"}
 
     if (@numeronym > 99)
-      word = ones[number_string[-3]] + " hundred " + deca[number_string[-2]] + " " + ones[number_string[-1]]
+      if number_string[-2] === "1"
+        word = ones[number_string[-3]] + " hundred " + tens[number_string[-1]]
+      else
+        word = ones[number_string[-3]] + "   hundred " + deca[number_string[-2]] + " " + ones[number_string[-1]]
+      end
     elsif (@numeronym > 19)
       word = deca[number_string[-2]] + " " + ones[number_string[-1]]
     elsif (@numeronym > 9)
@@ -29,6 +33,7 @@ class Numeronym
     word
   end
 end
+
 
 
 # if ((number_string[-2] != nil) & (number_string[-2] != "1"))

@@ -14,7 +14,7 @@ describe ('alpha_num') do
   # end
 
   it("converts a number to a string") do
-    numeronym = Numeronym.new(19)
-    expect(numeronym.convert()).to(eq("nineteen"))
+    numeronym = Numeronym.new(112)
+    expect(numeronym.convert()).to(eq("one hundred twelve"))
   end
 end
