@@ -20,6 +20,10 @@ class Numeronym
     if (@numeronym > 99)
       if number_string[-2] === "1"
         word = ones[number_string[-3]] + " hundred " + tens[number_string[-1]]
+      elsif (number_string[-1] === "0") & (number_string[-2] === "0")
+        word = ones[number_string[-3]] + " hundred"
+      elsif (number_string[-1] != "0") & (number_string[-2] === "0")
+        word = ones[number_string[-3]] + " hundred " + ones[number_string[-1]]
       else
         word = ones[number_string[-3]] + "   hundred " + deca[number_string[-2]] + " " + ones[number_string[-1]]
       end
